@@ -7,7 +7,7 @@ enum CovTypes {//We should expand this to have all the T2K and NOvA classes
   kNOvAdet=5,
 };
 
-Class OscPars{
+class OscPars{
  public:
   double dm32,dm21,sth13,sth12,sth23,dcp;
 }
