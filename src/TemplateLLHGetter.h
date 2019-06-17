@@ -4,8 +4,7 @@ enum CovTypes {//We should expand this to have all the T2K and NOvA classes
   kBANFF=2,
   kXsec=3,
   kND280det=4,
-  kNOvAFD=5,
-  kNOvAND=6
+  kNOvAdet=5,
 };
 
 Class OscPars{
@@ -20,7 +19,7 @@ class TemplateLLHGetter {
 
   virtual void init();//Some sort of call once init fuction
   virtual void SetParameters(CovTypes iCov, std::vector<double> vals);//Set systematic parameters
-  virtual void SetParameters(CovTypes iCov, OscPars oscpars);//Set oscillation parameters
+  virtual void SetOscParameters(OscPars oscpars);//Set oscillation parameters
   virtual double GetLikelihood();//Get likelihood
 
 };
