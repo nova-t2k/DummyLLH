@@ -2,8 +2,8 @@
 
 class ExampleExternalLLH : public TemplateLLHGetter {
  public:
-  SpecificLLHGetter();
-  ~SpecificLLHGetter();
+  ExampleExternalLLH();
+  ~ExampleExternalLLH();
 
   void init();
   void SetParameters(CovTypes iCov,std::vector<double> vals);
