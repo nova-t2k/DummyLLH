@@ -7,7 +7,7 @@ ROOTINCLUDES := $(shell root-config --prefix)/include
 ROOTCFLAGS := $(shell root-config --cflags) -I../
 
 INCDIR = -I. 
-LIBDIR = lib
+LIBDIR = ../lib
 
 UNAME := $(shell uname)
 
@@ -39,7 +39,7 @@ $(LIBDIR)/libEXTLLH.so: libEXTLLH.a ExampleExternalLLH.o
 	$(LD_SHARED) $(SOFLAGS) $^ -o $@ $(LIB_OBJECTS) $(ROOTLIBS) -L$(LIBDIR) 
 
 clean:
-	rm -f ../lib/libEXTLLH.so	
+	rm -f $(LIBDIR)/libEXTLLH.so	
 	rm -f *.o lib*
 
 distclean:
