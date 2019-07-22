@@ -4,6 +4,9 @@
 ExampleExternalLLH::ExampleExternalLLH(){
 }
 
+ExampleExternalLLH::~ExampleExternalLLH(){
+}
+
 void ExampleExternalLLH::init(){
   trueoscvals.dcp=-1.601;
   trueoscvals.dm32=-1.601;
