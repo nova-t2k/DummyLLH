@@ -1,10 +1,10 @@
-#include "ExampleExternalLLH.cpp"
+#include "ExampleExternalLLH.h"
 #include "TMath.h"
 
 ExampleExternalLLH::ExampleExternalLLH(){
 }
 
-ExampleExteralLLH::init(){
+void ExampleExternalLLH::init(){
   trueoscvals.dcp=-1.601;
   trueoscvals.dm32=-1.601;
   trueoscvals.dm21=-1.601;
@@ -21,14 +21,14 @@ ExampleExteralLLH::init(){
   
 }
 
-ExampleExteralLLH::SetParameters(CovTypes iCov,std::vector<double> vals){
+void ExampleExternalLLH::SetParameters(CovTypes iCov,std::vector<double> vals){
 }
 
-ExampleExteralLLH::SetOscParameters(OscPars oscpars){
+void ExampleExternalLLH::SetOscParameters(OscPars oscpars){
   oscvals=oscpars;
 }
 
-ExampleExteralLLH::GetLikelihood(){
+double ExampleExternalLLH::GetLikelihood(){
   double llh=0;
   
   std::vector<double*> oscvec;
@@ -48,15 +48,15 @@ ExampleExteralLLH::GetLikelihood(){
   trueoscvec.push_back(&(trueoscvals.dcp));
 
   std::vector<double*> trueoscsigvec;
-  trueoscsigvec.push_back(&(trueoscsigvals.sth12));
-  trueoscsigvec.push_back(&(trueoscsigvals.sth23));
-  trueoscsigvec.push_back(&(trueoscsigvals.sth13));
-  trueoscsigvec.push_back(&(trueoscsigvals.dm21));
-  trueoscsigvec.push_back(&(trueoscsigvals.dm32));
-  trueoscsigvec.push_back(&(trueoscsigvals.dcp));
+  trueoscsigvec.push_back(&(trueoscsigmas.sth12));
+  trueoscsigvec.push_back(&(trueoscsigmas.sth23));
+  trueoscsigvec.push_back(&(trueoscsigmas.sth13));
+  trueoscsigvec.push_back(&(trueoscsigmas.dm21));
+  trueoscsigvec.push_back(&(trueoscsigmas.dm32));
+  trueoscsigvec.push_back(&(trueoscsigmas.dcp));
   
   for(unsigned iPar=0;iPar<oscvec.size();iPar++){
-    llh+=TMath::Gaus(oscvec[iPar],trueoscvec[iPar],trueoscsigvec[iPar]);
+    llh+=TMath::Gaus(*oscvec[iPar],*trueoscvec[iPar],*trueoscsigvec[iPar]);
   }
   
 
