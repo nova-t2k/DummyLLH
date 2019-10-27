@@ -17,7 +17,7 @@ class OscPars{
 class TemplateLLHGetter {
  public:
   TemplateLLHGetter(){};
-  ~TemplateLLHGetter(){};
+  virtual ~TemplateLLHGetter() = default;
 
   virtual void init()=0;//Some sort of call once init fuction
   virtual void SetParameters(CovTypes iCov, std::vector<double> vals)=0;//Set systematic parameters
