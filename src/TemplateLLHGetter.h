@@ -1,3 +1,6 @@
+#ifndef TEMPLATELLHGETTER_H
+#define TEMPLATELLHGETTER_H
+
 #include <vector>
 
 enum CovTypes {//We should expand this to have all the T2K and NOvA classes
@@ -25,3 +28,5 @@ class TemplateLLHGetter {
   virtual double GetLikelihood()=0;//Get likelihood
 
 };
+
+#endif
