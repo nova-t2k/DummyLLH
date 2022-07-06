@@ -25,8 +25,15 @@ class TemplateLLHGetter {
   virtual void init()=0;//Some sort of call once init fuction
   virtual void SetParameters(CovTypes iCov, std::vector<double> vals)=0;//Set systematic parameters
   virtual void SetOscParameters(OscPars oscpars)=0;//Set oscillation parameters
+
   virtual void SetAsimovSystParameters(CovTypes iCov, std::vector<double> vals)=0;//Set Asimov systematic parameters
   virtual void SetAsimovOscParameters(OscPars oscpars)=0;//Set Asimov oscillation parameters
+
+  virtual void SetPoissonFakeDataSystParameters(CovTypes iCov, std::vector<double> vals)=0;//Set systematic parameters for Poisson fluctuated data
+  virtual void SetPoissonFakeDataOscParameters(OscPars oscpars)=0;//Set oscillation parameters for Poisson fluctuated data
+
+  virtual void ResetToDataFile()=0;
+
   virtual double GetLikelihood()=0;//Get likelihood
 
 };
