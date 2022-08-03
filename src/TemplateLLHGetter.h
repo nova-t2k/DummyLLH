@@ -10,6 +10,7 @@ enum CovTypes {//We should expand this to have all the T2K and NOvA classes
   kXsec=3,
   kND280det=4,
   kNOvAdet=5,
+  nCovTypes
 };
 
 class OscPars{
