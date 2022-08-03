@@ -18,7 +18,7 @@ endif
 #CLHEPINC = $(CLHEP_BASE_DIR)/include
 #CLHEPLIB = -L$(CLHEP_BASE_DIR)/lib -l$(CLHEP_LIB)
 
-CXXFLAGS   = -Wall -O3 -g -fPIC -fopenmp $(ROOTCFLAGS) $(INCDIR) -Werror
+CXXFLAGS   = -Wall -O3 -g -fPIC -fopenmp $(ROOTCFLAGS) $(INCDIR) -Werror -std=c++11
 
 SYSLIB     = -lm -lg2c
 LINK_ARGS_BIN = $(SYSLIB) $(ROOTLIBS) $(LIBDIR)
